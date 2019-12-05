@@ -518,10 +518,15 @@ PRINT '  '
 ```
 
 Here are a couple queries you can use to get some useful information out of the tables.
+
 以下是一些可以从表格中获取有用信息的查询。
+
 Here’s some SQL query logic to determine what the recommended amount of memory is needed for SQL Server according to the performance hit that is being carried out by any applications, or other queries. Keep in mind that are natural swings in the performance of any database system and you shouldn’t haphazardly add memory, or reconfigure memory for your environment based on a few results from this query. The good news is because the information is stored in the new DBSYSMON database, and we have a timestamp associated with the performance information you can begin to trend out the average swings in performance, and provision the necessary AWS Instance Types with actual guaranteed performance data to prove the Instance Type configuration that you need.
+
 下面是一些SQL查询逻辑，用于根据任何应用程序或其他查询执行的性能命中来确定SQL Server所需的建议内存量。请记住，这是任何数据库系统性能的自然波动，不应随意添加内存，或根据此查询的一些结果为您的环境重新配置内存。好消息是因为信息存储在新的DBSYSMON数据库中，我们有一个时间戳与性能信息相关联，有助于你趋向于平均性能波动，还能提供必要的AWS实例类型和实际保证的性能数据来检验你需要的实例类型配置。
+
 Whats better is that if the ‘recommended memory value’ is below that of existing configuration you can remove the Memory from AWS accordingly for the correct ‘Intance Type’ or ( memory packages ) so the Database systems that are less performance intensive can be properly managed with lower AWS ‘Instance Type’
+
 如果“建议的内存值”低于现有配置，则可以相应地从AWS中删除内存以获取正确的“Intance Type”或（内存包），以便可以使用较低的AWS'Instance Type'恰当管理性能较低的数据库系统 。
 
 ```SQL
@@ -540,6 +545,7 @@ order by
 
 ```
 This SQL query logic will basically return all the access times to the data. Stalls will show you how long queries are waiting etc. You can use this to determine the AWS Instance Type for storage. I will try to include some queries later on with conversions from MS to something human readable.
+
 此SQL查询逻辑（logic）将会基本上返回对数据的所有访问时间。停顿将显示查询等待的时间等。你可以使用它来确定用于存储的AWS实例类型。 之后我会尝试将一些查询包含在从MS到人类可读的内容的转换中。
 
 `select
